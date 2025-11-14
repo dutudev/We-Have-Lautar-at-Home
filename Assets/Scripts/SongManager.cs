@@ -10,7 +10,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Song currentSong;
     [Header("Gameobject Variables")]
     [SerializeField] private AudioSource songAudioSource;
-    [SerializeField] private GameObject notePrefab;
+    [SerializeField] private GameObject notePrefab, noteParent;
     [SerializeField] private GameObject[] tracksGameObjects;
     [Header("Game Variables")] 
     [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
@@ -86,7 +86,7 @@ public class SongManager : MonoBehaviour
         {
             Vector2 positionNote = new Vector2(tracksGameObjects[currentSong.notes[_lastNote].track].transform.position.x, positionNoteSpawnY);
 
-            var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity);
+            var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity, noteParent.transform);
             NoteObj noteCur = new NoteObj();
             noteCur.note = currentSong.notes[_lastNote];
             noteCur.obj = curNote;
