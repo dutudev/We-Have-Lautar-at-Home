@@ -872,7 +872,7 @@ MonoBehaviour:
   - {fileID: 1690381237}
   notesLive: []
   currentSongTime: 0
-  positionNoteSpawnY: 0
+  positionNoteSpawnY: 6
 --- !u!4 &998970996
 Transform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song: {fileID: 8300000, guid: 3ae69e5e7f73a9a4ba72ba7ab6d6a893, type: 3}
   notes:
-  - songTime: 5
+  - songTime: 10
     track: 0
   noteSpeed: 4
   title: Test Song1
