@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     [SerializeField] private GameObject[] tracksGameObjects;
     [Header("Game Variables")] 
-    [SerializeField] private List<GameObject> notesLive = new List<GameObject>(); 
+    [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
     [SerializeField] private float currentSongTime;
     [SerializeField] private float positionNoteSpawnY;
 
@@ -44,6 +45,31 @@ public class SongManager : MonoBehaviour
         {
             UpdateNotes();
         }
+
+        HandleInput();
+    }
+
+    public void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            HitTrack(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {   
+            HitTrack(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            HitTrack(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            HitTrack(3);
+        }
     }
 
     public void StartSong()
@@ -52,11 +78,7 @@ public class SongManager : MonoBehaviour
         _songStartDspTime = (float)AudioSettings.dspTime + 0.5f;
         songAudioSource.PlayScheduled(_songStartDspTime);
     }
-
-    public void UpdateCurrentTime()
-    {
-        //update current song time
-    }
+    
 
     public void CheckForNotesToStart(){
         while (currentSong.notes[_lastNote].songTime <= currentSongTime)
@@ -64,18 +86,59 @@ public class SongManager : MonoBehaviour
             Vector2 positionNote = new Vector2(tracksGameObjects[currentSong.notes[_lastNote].track].transform.position.x, positionNoteSpawnY);
 
             var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity);
-            notesLive.Add(curNote);
+            NoteObj noteCur = new NoteObj();
+            noteCur.note = currentSong.notes[_lastNote];
+            noteCur.obj = curNote;
+            
+            notesLive.Add(noteCur);
             _lastNote++;
+            if (_lastNote == currentSong.notes.Count)
+            {
+                _didNotesFinish = true;
+                break;
+            }
         }
     }
 
     public void UpdateNotes()
     {
+        List<NoteObj> notesToRemove = new List<NoteObj>();
         foreach (var note in notesLive)
         {
-            //update note position based on lerp
+            note.progress = (currentSongTime - (note.note.songTime - currentSong.noteSpeed)) / currentSong.noteSpeed;
+            note.obj.transform.position = new Vector2(note.obj.transform.position.x, Mathf.LerpUnclamped(positionNoteSpawnY, -4f, note.progress));
+            //print(note.progress);   
+            if (note.progress >= 1.1f)
+            {
+                notesToRemove.Add(note);
+                //ADD MISS !!
+            }
+        }
+
+        foreach (var note in notesToRemove)
+        {
+            notesLive.Remove(note);
         }
     }
+
+    public void HitTrack(int track)
+    {
+        List<NoteObj> trackNotes = new List<NoteObj>();
+        foreach (var note in notesLive)
+        {
+            if (note.note.track == track)
+            {
+                trackNotes.Add(note);    
+            }
+        }
+
+        if (trackNotes.Count != 0)
+        {
+            // give score based on progress
+            //if(trackNotes[0].progress >= 0.85)
+        }
+    }
+    
 }
 
 

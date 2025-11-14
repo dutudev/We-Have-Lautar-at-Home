@@ -25,3 +25,10 @@ public class Note
     public int track; // 0-1-2-3 tracks
 }
 
+[System.Serializable]
+public class NoteObj
+{
+    public GameObject obj;
+    public Note note;
+    public float progress;
+}
