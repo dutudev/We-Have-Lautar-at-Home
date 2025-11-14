@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -12,7 +13,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     [SerializeField] private GameObject[] tracksGameObjects;
     [Header("Game Variables")] 
-    [SerializeField] private List<GameObject> notesLive = new List<GameObject>(); 
+    [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
     [SerializeField] private float currentSongTime;
     [SerializeField] private float positionNoteSpawnY;
 
@@ -59,13 +60,22 @@ public class SongManager : MonoBehaviour
     }
 
     public void CheckForNotesToStart(){
-        while (currentSong.notes[_lastNote].songTime <= currentSongTime)
+        while (currentSong.notes[_lastNote].songTime - currentSong.noteSpeed <= currentSongTime && !_didNotesFinish)
         {
             Vector2 positionNote = new Vector2(tracksGameObjects[currentSong.notes[_lastNote].track].transform.position.x, positionNoteSpawnY);
 
             var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity);
-            notesLive.Add(curNote);
+            NoteObj noteCur = new NoteObj();
+            noteCur.note = currentSong.notes[_lastNote];
+            noteCur.obj = curNote;
+            
+            notesLive.Add(noteCur);
             _lastNote++;
+            if (_lastNote == currentSong.notes.Count)
+            {
+                _didNotesFinish = true;
+                break;
+            }
         }
     }
 
@@ -73,7 +83,8 @@ public class SongManager : MonoBehaviour
     {
         foreach (var note in notesLive)
         {
-            //update note position based on lerp
+            print(note.note.songTime - currentSongTime);
+            note.obj.transform.position = new Vector2(note.obj.transform.position.x, Mathf.LerpUnclamped(positionNoteSpawnY, -4f, (currentSongTime - (note.note.songTime - currentSong.noteSpeed)) / currentSong.noteSpeed));
         }
     }
 }
