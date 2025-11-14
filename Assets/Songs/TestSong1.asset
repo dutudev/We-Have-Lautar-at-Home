@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
   m_Name: TestSong1
-  m_EditorClassIdentifier: Assembly-CSharp::Song
-  song: {fileID: 0}
-  notes: []
-  noteSpeed: 0
-  title: 
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: 3ae69e5e7f73a9a4ba72ba7ab6d6a893, type: 3}
+  notes:
+  - songTime: 5
+    track: 0
+  noteSpeed: 4
+  title: Test Song1

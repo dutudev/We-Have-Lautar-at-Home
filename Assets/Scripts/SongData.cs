@@ -25,13 +25,3 @@ public class Note
     public int track; // 0-1-2-3 tracks
 }
 
-[System.Serializable]
-[CreateAssetMenu(fileName = "Song", menuName = "ScriptableObjects/Make Song", order = 1)]
-public class Song : ScriptableObject
-{
-    public AudioClip song;
-    public List<Note> notes = new List<Note>();
-    public float noteSpeed;
-    public string title;
-
-}
