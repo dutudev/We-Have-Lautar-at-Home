@@ -10,7 +10,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Song currentSong;
     [Header("Gameobject Variables")]
     [SerializeField] private AudioSource songAudioSource;
-    [SerializeField] private GameObject notePrefab;
+    [SerializeField] private GameObject notePrefab, noteParent;
     [SerializeField] private GameObject[] tracksGameObjects;
     [Header("Game Variables")] 
     [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
@@ -20,6 +20,7 @@ public class SongManager : MonoBehaviour
     private int _lastNote = 0;
     private bool _didNotesFinish = false;
     private float _songStartDspTime = -1;
+    private List<NoteObj> _notesToRemove = new List<NoteObj>();
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,31 @@ public class SongManager : MonoBehaviour
         {
             UpdateNotes();
         }
+
+        HandleInput();
+    }
+
+    public void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            HitTrack(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {   
+            HitTrack(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            HitTrack(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            HitTrack(3);
+        }
     }
 
     public void StartSong()
@@ -53,18 +79,14 @@ public class SongManager : MonoBehaviour
         _songStartDspTime = (float)AudioSettings.dspTime + 0.5f;
         songAudioSource.PlayScheduled(_songStartDspTime);
     }
-
-    public void UpdateCurrentTime()
-    {
-        //update current song time
-    }
+    
 
     public void CheckForNotesToStart(){
-        while (currentSong.notes[_lastNote].songTime - currentSong.noteSpeed <= currentSongTime && !_didNotesFinish)
+        while (currentSong.notes[_lastNote].songTime - currentSong.noteSpeed <= currentSongTime )
         {
             Vector2 positionNote = new Vector2(tracksGameObjects[currentSong.notes[_lastNote].track].transform.position.x, positionNoteSpawnY);
 
-            var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity);
+            var curNote = Instantiate(notePrefab, positionNote, Quaternion.identity, noteParent.transform);
             NoteObj noteCur = new NoteObj();
             noteCur.note = currentSong.notes[_lastNote];
             noteCur.obj = curNote;
@@ -81,12 +103,63 @@ public class SongManager : MonoBehaviour
 
     public void UpdateNotes()
     {
+         _notesToRemove.Clear();
         foreach (var note in notesLive)
         {
-            print(note.note.songTime - currentSongTime);
-            note.obj.transform.position = new Vector2(note.obj.transform.position.x, Mathf.LerpUnclamped(positionNoteSpawnY, -4f, (currentSongTime - (note.note.songTime - currentSong.noteSpeed)) / currentSong.noteSpeed));
+            note.progress = (currentSongTime - (note.note.songTime - currentSong.noteSpeed)) / currentSong.noteSpeed;
+            note.obj.transform.position = new Vector2(note.obj.transform.position.x, Mathf.LerpUnclamped(positionNoteSpawnY, -4f, note.progress));
+            //print(note.progress);   
+            if (note.progress >= 1.1f)
+            {
+                
+                _notesToRemove.Add(note);
+                //ADD MISS !!
+            }
+        }
+        UpdateRemoveNotes();
+        
+    }
+
+    public void HitTrack(int track)
+    {
+        List<NoteObj> trackNotes = new List<NoteObj>();
+        foreach (var note in notesLive)
+        {
+            if (note.note.track == track)
+            {
+                trackNotes.Add(note);    
+            }
+        }
+
+        if (trackNotes.Count != 0)
+        {
+            int score = 0;
+            _notesToRemove.Clear();
+            // give score based on progress
+            if (trackNotes[0].progress >= 0.85 && trackNotes[0].progress <= 1)
+            {
+                score = 25 + Mathf.FloorToInt(25 * ((trackNotes[0].progress - 0.85f) / 0.15f));
+                // ADD SCORE
+                _notesToRemove.Add(trackNotes[0]);
+            }else if (trackNotes[0].progress > 1)
+            {
+                score = 10;
+                //ADD score
+            }
+            UpdateRemoveNotes();
+            // I mean add score here not up cause more efficient
         }
     }
+
+    public void UpdateRemoveNotes()
+    {
+        foreach (var note in _notesToRemove)
+        {
+            Destroy(note.obj); 
+            notesLive.Remove(note);
+        }
+    }
+    
 }
 
 

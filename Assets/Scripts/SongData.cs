@@ -30,4 +30,5 @@ public class NoteObj
 {
     public GameObject obj;
     public Note note;
+    public float progress;
 }
