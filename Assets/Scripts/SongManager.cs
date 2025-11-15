@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -113,6 +112,7 @@ public class SongManager : MonoBehaviour
             {
                 
                 _notesToRemove.Add(note);
+                GameManager.instance.UpdateScore(0);
                 //ADD MISS !!
             }
         }
@@ -145,7 +145,7 @@ public class SongManager : MonoBehaviour
             // give score based on progress
             if (trackNotes[0].progress >= 0.85 && trackNotes[0].progress <= 1)
             {
-                score = 25 + Mathf.FloorToInt(25 * ((trackNotes[0].progress - 0.85f) / 0.15f));
+                score = 20 + Mathf.FloorToInt(30 * ((trackNotes[0].progress - 0.85f) / 0.15f));
                 // ADD SCORE
                 _notesToRemove.Add(trackNotes[0]);
             }else if (trackNotes[0].progress > 1)
@@ -155,7 +155,11 @@ public class SongManager : MonoBehaviour
                 _notesToRemove.Add(trackNotes[0]);
             }
             UpdateRemoveNotes();
-            // I mean add score here not up cause more efficient
+            if (score != 0)
+            {
+                GameManager.instance.UpdateScore(score); 
+            }
+            
         }
     }
 

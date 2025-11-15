@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MovingMotive
+  m_Name: MovingMotive 1
   m_Shader: {fileID: -6465566751694194690, guid: ea01b54e2046d7a4bbd5ea1f77f384c9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -56,7 +56,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _speed: 0.3
+    - _speed: -0.2
     m_Colors:
     - _Scale: {r: 5, g: 15, b: 0, a: 0}
   m_BuildTextureStacks: []
