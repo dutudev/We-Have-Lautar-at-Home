@@ -28,7 +28,7 @@ void checkButton(int pin, int care, int &lastReading, int &buttonState, unsigned
     if (reading != buttonState) {
       buttonState = reading;
       if (buttonState == HIGH) {
-        Serial.println("Button " + (String)care + " pressed\n");
+        Serial.println((String)care);
       }
     }
   }
@@ -36,8 +36,8 @@ void checkButton(int pin, int care, int &lastReading, int &buttonState, unsigned
 }
 
 void loop() {
-  checkButton(buttonPin1, 1, lastReading1, buttonState1, lastDebounceTime1);
-  checkButton(buttonPin2, 2, lastReading2, buttonState2, lastDebounceTime2);
-  checkButton(buttonPin3, 3, lastReading3, buttonState3, lastDebounceTime3);
-  checkButton(buttonPin4, 4, lastReading4, buttonState4, lastDebounceTime4);
+  checkButton(buttonPin1, 0, lastReading1, buttonState1, lastDebounceTime1);
+  checkButton(buttonPin2, 1, lastReading2, buttonState2, lastDebounceTime2);
+  checkButton(buttonPin3, 2, lastReading3, buttonState3, lastDebounceTime3);
+  checkButton(buttonPin4, 3, lastReading4, buttonState4, lastDebounceTime4);
 }

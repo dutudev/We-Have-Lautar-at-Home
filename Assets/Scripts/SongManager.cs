@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.IO.Ports;
 
 public class SongManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class SongManager : MonoBehaviour
     private bool _didNotesFinish = false;
     private float _songStartDspTime = -1;
     private List<NoteObj> _notesToRemove = new List<NoteObj>();
+
+    SerialPort serial = new SerialPort("COM3", 9600);
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class SongManager : MonoBehaviour
         });
 
         StartSong();
+        serial.Open();
     }
 
     // Update is called once per frame
@@ -51,25 +55,43 @@ public class SongManager : MonoBehaviour
 
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        string input = string.Empty;
+        if (serial.IsOpen && serial.BytesToRead > 0)
+        {
+            try
+            {
+                input = serial.ReadLine().Trim();
+            }
+            catch (System.TimeoutException)
+            {
+
+            }
+        }
+        print(input);
+        if (Input.GetKeyDown(KeyCode.S) || input =="0")
         {
             HitTrack(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || input == "1")
         {
             HitTrack(1);
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) || input == "2")
         {
             HitTrack(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) || input == "3")
         {
             HitTrack(3);
         }
+    }
+
+    public void OnApplicationQuit()
+    {
+        serial.Close();
     }
 
     public void StartSong()
