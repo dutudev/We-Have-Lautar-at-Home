@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5251771141545082049
+--- !u!114 &-1720716519948112839
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,13 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MovingMotive
-  m_Shader: {fileID: -6465566751694194690, guid: ea01b54e2046d7a4bbd5ea1f77f384c9, type: 3}
+  m_Name: trackGradient
+  m_Shader: {fileID: -6465566751694194690, guid: cb23069388d36f8438cd9e3be6d9c1cd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -36,10 +36,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 618dd4aa64ef6444981220a75604a238, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,7 +52,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _speed: 0.3
-    m_Colors:
-    - _Scale: {r: 5, g: 15, b: 0, a: 0}
+    - _offset: 0.21
+    - _size: 4.62
+    m_Colors: []
   m_BuildTextureStacks: []

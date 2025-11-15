@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -113,6 +112,7 @@ public class SongManager : MonoBehaviour
             {
                 
                 _notesToRemove.Add(note);
+                GameManager.instance.UpdateScore(0);
                 //ADD MISS !!
             }
         }
@@ -124,6 +124,12 @@ public class SongManager : MonoBehaviour
     {
         List<NoteObj> trackNotes = new List<NoteObj>();
         LeanTween.cancel(noteFinalGameObjects[track]);
+        noteFinalGameObjects[track].transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
+        LeanTween.scale(noteFinalGameObjects[track], new Vector3(0.25f, 0.25f, 0.25f), 0.5f).setEaseOutExpo().setOnComplete(
+            () =>
+            {
+                noteFinalGameObjects[track].transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            });
         foreach (var note in notesLive)
         {
             if (note.note.track == track)
@@ -139,16 +145,21 @@ public class SongManager : MonoBehaviour
             // give score based on progress
             if (trackNotes[0].progress >= 0.85 && trackNotes[0].progress <= 1)
             {
-                score = 25 + Mathf.FloorToInt(25 * ((trackNotes[0].progress - 0.85f) / 0.15f));
+                score = 20 + Mathf.FloorToInt(30 * ((trackNotes[0].progress - 0.85f) / 0.15f));
                 // ADD SCORE
                 _notesToRemove.Add(trackNotes[0]);
             }else if (trackNotes[0].progress > 1)
             {
                 score = 10;
                 //ADD score
+                _notesToRemove.Add(trackNotes[0]);
             }
             UpdateRemoveNotes();
-            // I mean add score here not up cause more efficient
+            if (score != 0)
+            {
+                GameManager.instance.UpdateScore(score); 
+            }
+            
         }
     }
 
