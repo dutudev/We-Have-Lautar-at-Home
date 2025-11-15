@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -595,12 +594,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -863,7 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6689b285e77ef44b80aa80cf178b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSong: {fileID: 11400000, guid: fdf181085567e30409a09f40c066dac1, type: 2}
+  currentSong: {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
   songAudioSource: {fileID: 998970997}
   notePrefab: {fileID: 3144838156281418093, guid: 8d2fb55734d2d0f40b9b57b315d58125, type: 3}
   noteParent: {fileID: 429728320}
@@ -872,6 +871,11 @@ MonoBehaviour:
   - {fileID: 294921700}
   - {fileID: 1375959869}
   - {fileID: 1690381237}
+  noteFinalGameObjects:
+  - {fileID: 340748366}
+  - {fileID: 79386030}
+  - {fileID: 920823822}
+  - {fileID: 1145855594}
   notesLive: []
   currentSongTime: 0
   positionNoteSpawnY: 6

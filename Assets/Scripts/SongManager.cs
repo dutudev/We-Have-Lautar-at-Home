@@ -124,6 +124,12 @@ public class SongManager : MonoBehaviour
     {
         List<NoteObj> trackNotes = new List<NoteObj>();
         LeanTween.cancel(noteFinalGameObjects[track]);
+        noteFinalGameObjects[track].transform.localScale = new Vector3(0.33f, 0.33f, 0.33f);
+        LeanTween.scale(noteFinalGameObjects[track], new Vector3(0.25f, 0.25f, 0.25f), 0.5f).setEaseOutExpo().setOnComplete(
+            () =>
+            {
+                noteFinalGameObjects[track].transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            });
         foreach (var note in notesLive)
         {
             if (note.note.track == track)
@@ -146,6 +152,7 @@ public class SongManager : MonoBehaviour
             {
                 score = 10;
                 //ADD score
+                _notesToRemove.Add(trackNotes[0]);
             }
             UpdateRemoveNotes();
             // I mean add score here not up cause more efficient
