@@ -1,0 +1,312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
+  m_Name: songtest2
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: 3ae69e5e7f73a9a4ba72ba7ab6d6a893, type: 3}
+  notes:
+  - songTime: 9.592041
+    track: 0
+  - songTime: 9.954712
+    track: 3
+  - songTime: 10.53064
+    track: 1
+  - songTime: 10.744019
+    track: 2
+  - songTime: 11.106689
+    track: 0
+  - songTime: 11.490723
+    track: 3
+  - songTime: 11.895996
+    track: 1
+  - songTime: 12.621338
+    track: 2
+  - songTime: 13.047974
+    track: 0
+  - songTime: 13.389282
+    track: 3
+  - songTime: 13.773315
+    track: 1
+  - songTime: 14.0720215
+    track: 2
+  - songTime: 14.797363
+    track: 3
+  - songTime: 15.47998
+    track: 0
+  - songTime: 15.565308
+    track: 2
+  - songTime: 15.949341
+    track: 1
+  - songTime: 16.738647
+    track: 3
+  - songTime: 16.952026
+    track: 0
+  - songTime: 17.485352
+    track: 2
+  - songTime: 17.890625
+    track: 1
+  - songTime: 18.658691
+    track: 0
+  - songTime: 18.829346
+    track: 3
+  - songTime: 19.042603
+    track: 1
+  - songTime: 19.255981
+    track: 2
+  - songTime: 19.725342
+    track: 0
+  - songTime: 20.109375
+    track: 3
+  - songTime: 20.621338
+    track: 1
+  - songTime: 20.77063
+    track: 2
+  - songTime: 20.855957
+    track: 0
+  - songTime: 21.602661
+    track: 3
+  - songTime: 21.922607
+    track: 1
+  - songTime: 22.669312
+    track: 2
+  - songTime: 22.925293
+    track: 0
+  - songTime: 23.458618
+    track: 3
+  - songTime: 23.842651
+    track: 1
+  - songTime: 24.610718
+    track: 0
+  - songTime: 24.823975
+    track: 2
+  - songTime: 25.378662
+    track: 1
+  - songTime: 26.274658
+    track: 3
+  - songTime: 26.466675
+    track: 0
+  - songTime: 26.829346
+    track: 2
+  - songTime: 27.618652
+    track: 0
+  - songTime: 28.343994
+    track: 1
+  - songTime: 29.261353
+    track: 0
+  - songTime: 29.45337
+    track: 3
+  - songTime: 29.858643
+    track: 1
+  - songTime: 30.562622
+    track: 2
+  - songTime: 31.35205
+    track: 3
+  - songTime: 32.333374
+    track: 0
+  - songTime: 32.52539
+    track: 3
+  - songTime: 32.88794
+    track: 1
+  - songTime: 33.293335
+    track: 2
+  - songTime: 33.59204
+    track: 2
+  - songTime: 34.40271
+    track: 0
+  - songTime: 34.615967
+    track: 2
+  - songTime: 35.490723
+    track: 3
+  - songTime: 35.81067
+    track: 2
+  - songTime: 36.98401
+    track: 0
+  - songTime: 37.368042
+    track: 3
+  - songTime: 37.751953
+    track: 2
+  - songTime: 38.093384
+    track: 3
+  - songTime: 38.221313
+    track: 2
+  - songTime: 38.349365
+    track: 1
+  - songTime: 38.456055
+    track: 0
+  - songTime: 38.86133
+    track: 2
+  - songTime: 39.394653
+    track: 2
+  - songTime: 39.543945
+    track: 3
+  - songTime: 39.991943
+    track: 2
+  - songTime: 40.589355
+    track: 0
+  - songTime: 40.823975
+    track: 3
+  - songTime: 41.527954
+    track: 2
+  - songTime: 41.890625
+    track: 1
+  - songTime: 42.87195
+    track: 0
+  - songTime: 43.36267
+    track: 3
+  - songTime: 43.746704
+    track: 2
+  - songTime: 44.194702
+    track: 1
+  - songTime: 44.685303
+    track: 2
+  - songTime: 44.855957
+    track: 1
+  - songTime: 45.5813
+    track: 3
+  - songTime: 45.922607
+    track: 0
+  - songTime: 46.562622
+    track: 3
+  - songTime: 46.733276
+    track: 0
+  - songTime: 47.074707
+    track: 2
+  - songTime: 47.47998
+    track: 1
+  - songTime: 47.84265
+    track: 2
+  - songTime: 48.226685
+    track: 1
+  - songTime: 48.589355
+    track: 2
+  - songTime: 48.823975
+    track: 1
+  - songTime: 49.12268
+    track: 3
+  - songTime: 49.293335
+    track: 0
+  - songTime: 49.71997
+    track: 3
+  - songTime: 49.911987
+    track: 2
+  - songTime: 50.104004
+    track: 1
+  - songTime: 50.210693
+    track: 0
+  - songTime: 50.807983
+    track: 0
+  - songTime: 50.89331
+    track: 1
+  - songTime: 50.936035
+    track: 2
+  - songTime: 51.021362
+    track: 3
+  - songTime: 51.554688
+    track: 0
+  - songTime: 51.95996
+    track: 3
+  - songTime: 52.365356
+    track: 1
+  - songTime: 52.53601
+    track: 2
+  - songTime: 52.685303
+    track: 0
+  - songTime: 52.855957
+    track: 3
+  - songTime: 53.069336
+    track: 1
+  - songTime: 53.45337
+    track: 2
+  - songTime: 53.880005
+    track: 0
+  - songTime: 54.17871
+    track: 3
+  - songTime: 54.605347
+    track: 3
+  - songTime: 54.733276
+    track: 2
+  - songTime: 54.98938
+    track: 1
+  - songTime: 55.287964
+    track: 2
+  - songTime: 55.650635
+    track: 3
+  - songTime: 56.05603
+    track: 1
+  - songTime: 56.696045
+    track: 3
+  - songTime: 56.781372
+    track: 2
+  - songTime: 56.88794
+    track: 1
+  - songTime: 56.930664
+    track: 0
+  - songTime: 60.621338
+    track: 0
+  - songTime: 60.98401
+    track: 3
+  - songTime: 61.368042
+    track: 1
+  - songTime: 61.751953
+    track: 2
+  - songTime: 61.901367
+    track: 0
+  - songTime: 62.05066
+    track: 3
+  - songTime: 62.41333
+    track: 1
+  - songTime: 62.75464
+    track: 2
+  - songTime: 63.45862
+    track: 3
+  - songTime: 63.522705
+    track: 2
+  - songTime: 63.885376
+    track: 1
+  - songTime: 64.52539
+    track: 1
+  - songTime: 64.696045
+    track: 2
+  - songTime: 64.88794
+    track: 0
+  - songTime: 65.079956
+    track: 3
+  - songTime: 65.42139
+    track: 1
+  - songTime: 65.82666
+    track: 2
+  - songTime: 66.253296
+    track: 1
+  - songTime: 66.594604
+    track: 3
+  - songTime: 66.74402
+    track: 0
+  - songTime: 66.91467
+    track: 2
+  - songTime: 67.08533
+    track: 1
+  - songTime: 67.25598
+    track: 3
+  - songTime: 67.66138
+    track: 0
+  - songTime: 68.130615
+    track: 3
+  - songTime: 68.6427
+    track: 3
+  - songTime: 68.74939
+    track: 2
+  - songTime: 68.89868
+    track: 0
+  - songTime: 68.98401
+    track: 1
+  noteSpeed: 3
+  title: AI DI CAPI MEU

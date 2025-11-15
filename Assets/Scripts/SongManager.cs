@@ -11,7 +11,7 @@ public class SongManager : MonoBehaviour
     [Header("Gameobject Variables")]
     [SerializeField] private AudioSource songAudioSource;
     [SerializeField] private GameObject notePrefab, noteParent;
-    [SerializeField] private GameObject[] tracksGameObjects;
+    [SerializeField] private GameObject[] tracksGameObjects, noteFinalGameObjects;
     [Header("Game Variables")] 
     [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
     [SerializeField] private float currentSongTime;
@@ -58,7 +58,7 @@ public class SongManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.D))
-        {   
+        {
             HitTrack(1);
         }
 
@@ -123,6 +123,7 @@ public class SongManager : MonoBehaviour
     public void HitTrack(int track)
     {
         List<NoteObj> trackNotes = new List<NoteObj>();
+        LeanTween.cancel(noteFinalGameObjects[track]);
         foreach (var note in notesLive)
         {
             if (note.note.track == track)
