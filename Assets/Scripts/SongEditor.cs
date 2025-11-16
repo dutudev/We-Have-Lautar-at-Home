@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -74,6 +75,7 @@ public class NoteContainerEditor
     public List<Note> notes;
 }
 
+
 [CustomEditor(typeof(SongEditor))]
 public class EditorSongInspector : Editor
 {
@@ -88,3 +90,4 @@ public class EditorSongInspector : Editor
         }
     }
 }
+#endif
