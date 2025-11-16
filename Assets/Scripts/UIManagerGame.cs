@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class UIManagerGame : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText, rateText, endText;
-    [SerializeField] private GameObject finalMenu;
+    [SerializeField] private GameObject finalMenu, transition;
     [SerializeField] private CanvasGroup finalMenuAlpha;
     public static UIManagerGame instance;
 
@@ -81,6 +81,15 @@ public class UIManagerGame : MonoBehaviour
             _rateTextAlpha.alpha = 0;
         });
 
+    }
+
+    public void ReturnMainMenu()
+    {
+        transition.SetActive(true);
+        LeanTween.scale(transition, new Vector3(25, 25, 25), 1f).setEaseOutExpo().setOnComplete(() =>
+        {
+            SceneManager.LoadScene("MainMenu");
+        });
     }
 
     public void OpenFinalMenu()

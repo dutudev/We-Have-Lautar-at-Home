@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
+  m_Name: TameImpala
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: ab7bdb46281dbd14dbfefb072d5041ab, type: 3}
+  notes:
+  - songTime: 6.3066406
+    track: 0
+  - songTime: 6.925293
+    track: 3
+  - songTime: 7.3518066
+    track: 1
+  - songTime: 8.2265625
+    track: 2
+  - songTime: 9.0373535
+    track: 0
+  - songTime: 9.442627
+    track: 3
+  - songTime: 9.911865
+    track: 1
+  - songTime: 10.317139
+    track: 2
+  - songTime: 10.765137
+    track: 0
+  - songTime: 11.575928
+    track: 3
+  - songTime: 12.450684
+    track: 0
+  - songTime: 12.770508
+    track: 3
+  - songTime: 13.624023
+    track: 1
+  - songTime: 13.773193
+    track: 2
+  - songTime: 14.199951
+    track: 3
+  - songTime: 14.605225
+    track: 2
+  - songTime: 15.031982
+    track: 1
+  - songTime: 15.864014
+    track: 0
+  - songTime: 16.226562
+    track: 3
+  - songTime: 16.951904
+    track: 3
+  - songTime: 17.037354
+    track: 2
+  - songTime: 17.186523
+    track: 1
+  - songTime: 17.86914
+    track: 2
+  - songTime: 17.997314
+    track: 3
+  - songTime: 18.445312
+    track: 1
+  - songTime: 18.807861
+    track: 2
+  - songTime: 19.23462
+    track: 3
+  - songTime: 19.682617
+    track: 2
+  - songTime: 20.109375
+    track: 3
+  - songTime: 20.471924
+    track: 1
+  - songTime: 20.919922
+    track: 0
+  - songTime: 21.34668
+    track: 3
+  - songTime: 21.751953
+    track: 2
+  - songTime: 22.66919
+    track: 3
+  - songTime: 23.074707
+    track: 1
+  - songTime: 23.47998
+    track: 2
+  - songTime: 23.885254
+    track: 3
+  - songTime: 24.333252
+    track: 2
+  - songTime: 25.208008
+    track: 1
+  - songTime: 25.997314
+    track: 3
+  - songTime: 26.146484
+    track: 2
+  - songTime: 26.552002
+    track: 0
+  - songTime: 27.277344
+    track: 1
+  - songTime: 28.08789
+    track: 2
+  - songTime: 28.599854
+    track: 3
+  - songTime: 29.45337
+    track: 1
+  - songTime: 29.815918
+    track: 2
+  - songTime: 30.583984
+    track: 3
+  - songTime: 30.66919
+    track: 2
+  - songTime: 31.60791
+    track: 0
+  - songTime: 31.778564
+    track: 1
+  - songTime: 31.906494
+    track: 2
+  - songTime: 32.013184
+    track: 3
+  noteSpeed: 1.5
+  title: Eventually Edit
+  author: Tame Impala

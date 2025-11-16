@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.IO.Ports;
+using Unity.VisualScripting;
 
 public class SongManager : MonoBehaviour
 {
@@ -19,8 +20,8 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Material movingMotif, movingMotif1;
 
     private int _lastNote = 0;
-    private bool _didNotesFinish = false, _endmenuOpen = false;
-    private float _songStartDspTime = -1;
+    private bool _didNotesFinish = false, _endmenuOpen = false, _returnMenu = false;
+    private float _songStartDspTime = -1, _timeLeftEnd;
     private List<NoteObj> _notesToRemove = new List<NoteObj>();
 
     private SerialPort serial;
@@ -56,7 +57,12 @@ public class SongManager : MonoBehaviour
         HandleInput();
         if (_didNotesFinish && !songAudioSource.isPlaying && !_endmenuOpen)
         {
-            UIManagerGame.instance.OpenFinalMenu(GameManager.instance.get);
+            UIManagerGame.instance.OpenFinalMenu();
+        }
+        
+        if (_didNotesFinish && !songAudioSource.isPlaying && Input.GetKeyDown(KeyCode.Space))
+        {
+            UIManagerGame.instance.ReturnMainMenu();
         }
     }
 
@@ -94,6 +100,25 @@ public class SongManager : MonoBehaviour
         {
             HitTrack(3);
         }
+
+        print(_timeLeftEnd);
+        if (Input.GetKey(KeyCode.Escape) && !_returnMenu)
+        {
+            _timeLeftEnd += Time.deltaTime;
+            if (_timeLeftEnd >= 2f)
+            {
+                _returnMenu = true;
+                UIManagerGame.instance.ReturnMainMenu();
+                LeanTween.value(gameObject, 0.8f, 0f,0f).setOnUpdate((value) =>
+                {
+                    songAudioSource.volume = value;
+                });
+            }
+        }
+        else
+        {
+            _timeLeftEnd = 0f;
+        }
     }
 
     public void OnApplicationQuit()
@@ -104,7 +129,7 @@ public class SongManager : MonoBehaviour
     public void StartSong()
     {
         songAudioSource.clip = currentSong.song;
-        _songStartDspTime = (float)AudioSettings.dspTime + 0.5f;
+        _songStartDspTime = (float)AudioSettings.dspTime + 3f;
         songAudioSource.PlayScheduled(_songStartDspTime);
     }
     
@@ -176,6 +201,20 @@ public class SongManager : MonoBehaviour
             {
                 score = 20 + Mathf.FloorToInt(30 * ((trackNotes[0].progress - 0.85f) / 0.15f));
                 // ADD SCORE
+                /*
+                if (score >= 45)
+                {
+                    LeanTween.cancel(gameObject);
+                    LeanTween.value(gameObject, 0, 1, 1f).setEaseOutExpo().setOnUpdate((value) =>
+                    {
+                        movingMotif.SetFloat("_speed", Mathf.Lerp(0.5f, 0.3f, value));
+                        movingMotif1.SetFloat("_speed", Mathf.Lerp(-0.5f, -0.2f, value));
+                    }).setOnComplete(() =>
+                    {
+                        movingMotif.SetFloat("_speed", 0.3f);
+                        movingMotif1.SetFloat("_speed", -0.2f);
+                    });
+                }*/
                 _notesToRemove.Add(trackNotes[0]);
             }else if (trackNotes[0].progress > 1)
             {

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            print(SerialPort.GetPortNames().Length);
             if (SerialPort.GetPortNames().Length != 0)
             {
                 comPort = SerialPort.GetPortNames()[0]; 
@@ -49,6 +50,16 @@ public class GameManager : MonoBehaviour
         currentSong = song;
     }
 
+    public void SetSerialPort(string port)
+    {
+        comPort = port;
+    }
+
+    public string[] GetSerialPorts()
+    {
+        return SerialPort.GetPortNames();
+    }
+
     public void UpdateScore(int value)
     {
         if (value == 0)
@@ -72,6 +83,7 @@ public class GameManager : MonoBehaviour
         if (next.name == "MainMenu")
         {
             currentSong = null;
+            score = 0;
         }
     }
 

@@ -8,7 +8,7 @@ public class SelectSong : MonoBehaviour
 {
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private List<Song> availableSongs = new List<Song>();
-    [SerializeField] private GameObject vinylPrefab, vinylParent, transition;
+    [SerializeField] private GameObject vinylPrefab, vinylParent, transition, controlTab;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private CanvasGroup namePanel, authorPanel;
     [SerializeField] private TMP_Text nameText, authorText;
@@ -80,6 +80,7 @@ public class SelectSong : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !_started)
         {
+            Destroy(controlTab);
             GameManager.instance.StartGame(availableSongs[_currentSongIndex]);
             transition.SetActive(true);
             LeanTween.scale(transition, new Vector3(25, 25, 25), 1f).setEaseOutExpo().setOnComplete(() =>
