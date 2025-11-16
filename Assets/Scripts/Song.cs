@@ -10,6 +10,6 @@ public class Song : ScriptableObject
     public AudioClip song;
     public List<Note> notes = new List<Note>();
     public float noteSpeed;
-    public string title;
+    public string title, author;
 
 }

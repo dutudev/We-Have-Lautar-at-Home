@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
+using TMPro;
 using UnityEngine;
 
 public class SelectSong : MonoBehaviour
@@ -9,6 +9,8 @@ public class SelectSong : MonoBehaviour
     [SerializeField] private List<Song> availableSongs = new List<Song>();
     [SerializeField] private GameObject vinylPrefab, vinylParent;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private CanvasGroup namePanel, authorPanel;
+    [SerializeField] private TMP_Text nameText, authorText;
 
     private List<GameObject> vinyls = new List<GameObject>();
     private float _rotation;
@@ -19,11 +21,13 @@ public class SelectSong : MonoBehaviour
         int posY = 0;
         foreach (var song in availableSongs)
         {
-            var vinyl = Instantiate(vinylPrefab, new Vector3(0, 0, 0), quaternion.identity, vinylParent.transform);
+            var vinyl = Instantiate(vinylPrefab, new Vector3(0, 0, 0), Quaternion.identity, vinylParent.transform);
             vinyls.Add(vinyl); 
             vinyl.transform.localPosition = new Vector3(0, posY, 0);
             posY += -800;
         }
+        nameText.text = availableSongs[_currentSongIndex].title;
+        authorText.text = availableSongs[_currentSongIndex].author;
     }
 
     // Update is called once per frame
@@ -38,8 +42,17 @@ public class SelectSong : MonoBehaviour
                 _currentSongIndex = availableSongs.Count;
             }
             LeanTween.cancel(vinylParent);
+            LeanTween.cancel(namePanel.gameObject);
+            LeanTween.cancel(authorPanel.gameObject);
+            namePanel.alpha = 0;
+            authorPanel.alpha = 0;
             _currentSongIndex--;
+            nameText.text = availableSongs[_currentSongIndex].title;
+            authorText.text = availableSongs[_currentSongIndex].author;
+            
             LeanTween.moveLocalY(vinylParent, _currentSongIndex * 800, 1f).setEaseOutExpo();
+            LeanTween.alphaCanvas(namePanel, 1, 1f).setEaseOutExpo();
+            LeanTween.alphaCanvas(authorPanel, 1, 1f).setEaseOutExpo();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -49,8 +62,17 @@ public class SelectSong : MonoBehaviour
                 _currentSongIndex = -1;
             }
             LeanTween.cancel(vinylParent);
+            LeanTween.cancel(namePanel.gameObject);
+            LeanTween.cancel(authorPanel.gameObject);
+            namePanel.alpha = 0;
+            authorPanel.alpha = 0;
             _currentSongIndex++;
+            nameText.text = availableSongs[_currentSongIndex].title;
+            authorText.text = availableSongs[_currentSongIndex].author;
+            
             LeanTween.moveLocalY(vinylParent, _currentSongIndex * 800, 1f).setEaseOutExpo();
+            LeanTween.alphaCanvas(namePanel, 1, 1f).setEaseOutExpo();
+            LeanTween.alphaCanvas(authorPanel, 1, 1f).setEaseOutExpo();
         }
     }
 

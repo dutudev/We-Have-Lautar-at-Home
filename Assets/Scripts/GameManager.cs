@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO.Ports;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
             {
                 comPort = SerialPort.GetPortNames()[0]; 
             }
+
+            SceneManager.activeSceneChanged += SceneChanged;
         }
     }
 
@@ -34,6 +37,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Song GetCurrentSong()
+    {
+        return currentSong;
+    }
+
+    public void SetCurrentSong(Song song)
+    {
+        currentSong = song;
     }
 
     public void UpdateScore(int value)
@@ -48,6 +61,15 @@ public class GameManager : MonoBehaviour
         UIManagerGame.instance.UpdateRateText(value);
         UIManagerGame.instance.UpdateScoreText(score);
     }
+
+    private void SceneChanged(Scene current, Scene next)
+    {
+        if (next.name == "MainMenu")
+        {
+            currentSong = null;
+        }
+    }
+
 
     public string GetPortName()
     {

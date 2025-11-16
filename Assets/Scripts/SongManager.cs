@@ -26,7 +26,7 @@ public class SongManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentSong = GameManager.instance.GetCurrentSong();
         //Sort note list
         currentSong.notes.Sort((note1, note2) =>
         {

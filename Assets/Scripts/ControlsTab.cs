@@ -12,6 +12,7 @@ public class ControlsTab : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
+        
         if (GameManager.instance.GetPortName() != String.Empty)
         {
             serial = new SerialPort(GameManager.instance.GetPortName(), 9600);
@@ -24,6 +25,10 @@ public class ControlsTab : MonoBehaviour
     void Update()
     {
         string input = string.Empty;
+        if (serial != null)
+        {
+        
+
         if (serial.IsOpen && serial.BytesToRead > 0)
         {
             try
@@ -35,7 +40,8 @@ public class ControlsTab : MonoBehaviour
 
             }
         }
-        if (Input.GetKeyDown(KeyCode.S) || input =="0")
+        }
+    if (Input.GetKeyDown(KeyCode.S) || input =="0")
         {
             HitTrack(0);
         }
@@ -58,13 +64,20 @@ public class ControlsTab : MonoBehaviour
 
     private void OnDisable()
     {
-        if(serial.IsOpen)
-        serial.Close();
+        if (serial != null)
+        {
+            if (serial.IsOpen)
+            {
+                serial.Close();
+            }
+        }
     }
 
     public void HitTrack(int value)
     {
         particles[value].Play();
-        
+        LeanTween.cancel(drumTops[value].gameObject);
+        drumTops[value].alpha = 1;
+        LeanTween.alphaCanvas(drumTops[value], 0, 0.5f).setEaseOutExpo();
     }
 }
