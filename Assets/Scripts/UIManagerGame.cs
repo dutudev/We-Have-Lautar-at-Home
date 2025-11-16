@@ -48,7 +48,7 @@ public class UIManagerGame : MonoBehaviour
 
     public void UpdateRateText(int value)
     {
-        print(value);
+        //print(value);
         Color textCol;
         string text = String.Empty;
         if (value >= 45)

@@ -22,10 +22,11 @@ public class SongManager : MonoBehaviour
     private float _songStartDspTime = -1;
     private List<NoteObj> _notesToRemove = new List<NoteObj>();
 
-    SerialPort serial = new SerialPort("COM3", 9600);
+    private SerialPort serial;
     // Start is called before the first frame update
     void Start()
     {
+        
         //Sort note list
         currentSong.notes.Sort((note1, note2) =>
         {
@@ -33,6 +34,7 @@ public class SongManager : MonoBehaviour
         });
 
         StartSong();
+        serial = new SerialPort(GameManager.instance.GetPortName(), 9600);
         serial.Open();
     }
 
@@ -67,7 +69,7 @@ public class SongManager : MonoBehaviour
 
             }
         }
-        print(input);
+       // print(input);
         if (Input.GetKeyDown(KeyCode.S) || input =="0")
         {
             HitTrack(0);
