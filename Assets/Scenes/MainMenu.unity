@@ -6944,12 +6944,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   availableSongs:
   - {fileID: 11400000, guid: 8719a416fbe9c244a8bd7fd026038ac3, type: 2}
-  - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
-  - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
-  - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
-  - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
-  - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
-  - {fileID: 11400000, guid: bd40647d236962149b85e5721ffe5ab2, type: 2}
+  - {fileID: 11400000, guid: f69698905971ec34c8a08e23e04e99ea, type: 2}
+  - {fileID: 11400000, guid: 24d7e022f01c43a4aab9815658214282, type: 2}
+  - {fileID: 11400000, guid: 87010b2be69d5fb49b207a561b8b2a29, type: 2}
+  - {fileID: 11400000, guid: 65572df8984a29a4f946c4d1d0cd9c9a, type: 2}
+  - {fileID: 11400000, guid: 06f3317898c4d3e4ba158f5b413e66bc, type: 2}
   vinylPrefab: {fileID: 8716549701393800554, guid: 0b9345fa006bcbb41917b1b122f37d80, type: 3}
   vinylParent: {fileID: 211954637}
   transition: {fileID: 306466362}
@@ -24591,7 +24590,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
