@@ -16,9 +16,10 @@ public class SongManager : MonoBehaviour
     [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
     [SerializeField] private float currentSongTime;
     [SerializeField] private float positionNoteSpawnY;
+    [SerializeField] private Material movingMotif, movingMotif1;
 
     private int _lastNote = 0;
-    private bool _didNotesFinish = false;
+    private bool _didNotesFinish = false, _endmenuOpen = false;
     private float _songStartDspTime = -1;
     private List<NoteObj> _notesToRemove = new List<NoteObj>();
 
@@ -53,6 +54,10 @@ public class SongManager : MonoBehaviour
         }
 
         HandleInput();
+        if (_didNotesFinish && !songAudioSource.isPlaying && !_endmenuOpen)
+        {
+            UIManagerGame.instance.OpenFinalMenu(GameManager.instance.get);
+        }
     }
 
     public void HandleInput()

@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
         UIManagerGame.instance.UpdateScoreText(score);
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+    
     private void SceneChanged(Scene current, Scene next)
     {
         if (next.name == "MainMenu")
@@ -70,6 +75,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartGame(Song selected)
+    {
+        currentSong = selected;
+    }
 
     public string GetPortName()
     {

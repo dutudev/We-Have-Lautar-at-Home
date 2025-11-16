@@ -5583,6 +5583,7 @@ GameObject:
   - component: {fileID: 306466363}
   - component: {fileID: 306466365}
   - component: {fileID: 306466364}
+  - component: {fileID: 306466366}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -5647,6 +5648,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306466362}
   m_CullTransparentMesh: 1
+--- !u!114 &306466366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306466362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afebb12030fbd14ba105b98013a3029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &413086287
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,6 +6642,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
   vinylPrefab: {fileID: 8716549701393800554, guid: 0b9345fa006bcbb41917b1b122f37d80, type: 3}
   vinylParent: {fileID: 211954637}
+  transition: {fileID: 306466362}
   rotationSpeed: 15
   namePanel: {fileID: 2106845681}
   authorPanel: {fileID: 1862168538}

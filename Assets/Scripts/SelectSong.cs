@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SelectSong : MonoBehaviour
 {
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private List<Song> availableSongs = new List<Song>();
-    [SerializeField] private GameObject vinylPrefab, vinylParent;
+    [SerializeField] private GameObject vinylPrefab, vinylParent, transition;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private CanvasGroup namePanel, authorPanel;
     [SerializeField] private TMP_Text nameText, authorText;
@@ -15,9 +16,11 @@ public class SelectSong : MonoBehaviour
     private List<GameObject> vinyls = new List<GameObject>();
     private float _rotation;
     private int _currentSongIndex = 0;
+    private bool _started = false;
     // Start is called before the first frame update
     void Start()
     {
+        
         int posY = 0;
         foreach (var song in availableSongs)
         {
@@ -73,6 +76,16 @@ public class SelectSong : MonoBehaviour
             LeanTween.moveLocalY(vinylParent, _currentSongIndex * 800, 1f).setEaseOutExpo();
             LeanTween.alphaCanvas(namePanel, 1, 1f).setEaseOutExpo();
             LeanTween.alphaCanvas(authorPanel, 1, 1f).setEaseOutExpo();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !_started)
+        {
+            GameManager.instance.StartGame(availableSongs[_currentSongIndex]);
+            transition.SetActive(true);
+            LeanTween.scale(transition, new Vector3(25, 25, 25), 1f).setEaseOutExpo().setOnComplete(() =>
+            {
+                SceneManager.LoadScene("Game");
+            });
         }
     }
 

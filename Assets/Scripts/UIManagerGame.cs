@@ -8,7 +8,9 @@ using Random = UnityEngine.Random;
 
 public class UIManagerGame : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText, rateText;
+    [SerializeField] private TMP_Text scoreText, rateText, endText;
+    [SerializeField] private GameObject finalMenu;
+    [SerializeField] private CanvasGroup finalMenuAlpha;
     public static UIManagerGame instance;
 
     private CanvasGroup _rateTextAlpha;
@@ -79,5 +81,12 @@ public class UIManagerGame : MonoBehaviour
             _rateTextAlpha.alpha = 0;
         });
 
+    }
+
+    public void OpenFinalMenu()
+    {
+        finalMenu.SetActive(true);
+        endText.text = GameManager.instance.GetScore().ToString();
+        LeanTween.alphaCanvas(finalMenuAlpha, 1, 1f).setEaseOutExpo();
     }
 }
