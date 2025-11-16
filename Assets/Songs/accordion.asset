@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
+  m_Name: accordion
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: ff7408965eac77b4a98a5e11f611af1a, type: 3}
+  notes:
+  - songTime: 4.3013916
+    track: 0
+  - songTime: 4.856079
+    track: 3
+  - songTime: 5.133423
+    track: 2
+  - songTime: 5.8374023
+    track: 1
+  - songTime: 6.2000732
+    track: 0
+  - songTime: 6.7547607
+    track: 0
+  - songTime: 7.0960693
+    track: 0
+  - songTime: 7.9920654
+    track: 1
+  - songTime: 8.888062
+    track: 2
+  - songTime: 9.250732
+    track: 3
+  - songTime: 9.549316
+    track: 3
+  - songTime: 10.018677
+    track: 2
+  - songTime: 11.853394
+    track: 0
+  - songTime: 12.728027
+    track: 1
+  - songTime: 13.368042
+    track: 2
+  - songTime: 14.264038
+    track: 3
+  - songTime: 15.288086
+    track: 3
+  - songTime: 16.440063
+    track: 3
+  - songTime: 17.314697
+    track: 0
+  - songTime: 18.466675
+    track: 1
+  - songTime: 19.618652
+    track: 2
+  - songTime: 20.088013
+    track: 1
+  - songTime: 20.557373
+    track: 0
+  - songTime: 23.394653
+    track: 0
+  - songTime: 24.034668
+    track: 3
+  - songTime: 24.418701
+    track: 2
+  - songTime: 25.058716
+    track: 2
+  - songTime: 25.528076
+    track: 1
+  - songTime: 26.104004
+    track: 1
+  - songTime: 26.488037
+    track: 0
+  - songTime: 26.97876
+    track: 0
+  - songTime: 27.277344
+    track: 0
+  - songTime: 28.109375
+    track: 0
+  - songTime: 29.176025
+    track: 3
+  - songTime: 29.474731
+    track: 2
+  - songTime: 30.434692
+    track: 2
+  - songTime: 30.690674
+    track: 3
+  - songTime: 31.138672
+    track: 1
+  - songTime: 32.034668
+    track: 1
+  - songTime: 33.037354
+    track: 0
+  - songTime: 33.314697
+    track: 1
+  - songTime: 34.65869
+    track: 3
+  - songTime: 34.97876
+    track: 3
+  - songTime: 35.618652
+    track: 2
+  - songTime: 35.91736
+    track: 2
+  - songTime: 36.600098
+    track: 0
+  - songTime: 36.89868
+    track: 0
+  - songTime: 37.47473
+    track: 1
+  - songTime: 37.858765
+    track: 1
+  - songTime: 38.349365
+    track: 2
+  - songTime: 38.64807
+    track: 3
+  - songTime: 39.35205
+    track: 2
+  - songTime: 39.69336
+    track: 0
+  - songTime: 40.674683
+    track: 0
+  - songTime: 41.378662
+    track: 1
+  - songTime: 41.656006
+    track: 2
+  - songTime: 42.53076
+    track: 3
+  - songTime: 43.170654
+    track: 3
+  - songTime: 43.490723
+    track: 3
+  - songTime: 44.28003
+    track: 2
+  - songTime: 44.6427
+    track: 0
+  - songTime: 45.282715
+    track: 1
+  - songTime: 45.58142
+    track: 3
+  - songTime: 46.434692
+    track: 2
+  - songTime: 46.7334
+    track: 1
+  - songTime: 47.224
+    track: 3
+  - songTime: 47.480103
+    track: 0
+  - songTime: 48.013428
+    track: 2
+  - songTime: 48.26941
+    track: 1
+  - songTime: 48.50403
+    track: 0
+  - songTime: 49.33606
+    track: 0
+  - songTime: 50.359985
+    track: 0
+  - songTime: 50.97876
+    track: 0
+  - songTime: 51.661377
+    track: 2
+  - songTime: 51.895996
+    track: 2
+  - songTime: 52.664062
+    track: 3
+  - songTime: 53.154663
+    track: 3
+  - songTime: 53.986694
+    track: 1
+  - songTime: 54.925415
+    track: 0
+  - songTime: 55.992065
+    track: 1
+  - songTime: 56.696045
+    track: 2
+  - songTime: 57.01599
+    track: 3
+  - songTime: 57.528076
+    track: 3
+  - songTime: 58.210693
+    track: 2
+  - songTime: 58.786743
+    track: 2
+  - songTime: 59.618652
+    track: 1
+  - songTime: 60.557373
+    track: 1
+  - songTime: 60.920044
+    track: 0
+  - songTime: 61.773438
+    track: 0
+  - songTime: 62.39209
+    track: 3
+  noteSpeed: 2
+  title: Accordion
+  author: Public Domain

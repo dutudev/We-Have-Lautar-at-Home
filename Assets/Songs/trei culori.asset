@@ -1,0 +1,539 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
+  m_Name: trei culori
+  m_EditorClassIdentifier: 
+  song: {fileID: 0}
+  notes:
+  - songTime: 5.901123
+    track: 0
+  - songTime: 6.5839844
+    track: 1
+  - songTime: 7.1171875
+    track: 2
+  - songTime: 8.098633
+    track: 3
+  - songTime: 8.567871
+    track: 0
+  - songTime: 8.951904
+    track: 1
+  - songTime: 9.143799
+    track: 2
+  - songTime: 9.6345215
+    track: 3
+  - songTime: 10.167969
+    track: 1
+  - songTime: 10.658447
+    track: 0
+  - songTime: 10.807861
+    track: 2
+  - songTime: 11.447998
+    track: 3
+  - songTime: 12.237305
+    track: 1
+  - songTime: 12.557129
+    track: 0
+  - songTime: 12.834473
+    track: 2
+  - songTime: 13.38916
+    track: 1
+  - songTime: 13.986572
+    track: 3
+  - songTime: 14.199951
+    track: 0
+  - songTime: 14.5625
+    track: 1
+  - songTime: 15.138428
+    track: 2
+  - songTime: 15.799805
+    track: 3
+  - songTime: 16.311768
+    track: 0
+  - songTime: 16.54663
+    track: 1
+  - songTime: 17.058594
+    track: 2
+  - songTime: 17.655762
+    track: 3
+  - songTime: 18.167969
+    track: 0
+  - songTime: 18.402588
+    track: 1
+  - songTime: 19.810547
+    track: 1
+  - songTime: 20.173096
+    track: 0
+  - songTime: 20.365234
+    track: 3
+  - songTime: 21.36792
+    track: 1
+  - songTime: 21.60254
+    track: 1
+  - songTime: 21.687988
+    track: 0
+  - songTime: 22.071777
+    track: 2
+  - songTime: 22.583984
+    track: 1
+  - songTime: 23.330566
+    track: 3
+  - songTime: 23.7146
+    track: 0
+  - songTime: 23.970459
+    track: 1
+  - songTime: 24.54663
+    track: 2
+  - songTime: 25.271973
+    track: 3
+  - songTime: 25.698486
+    track: 0
+  - songTime: 25.95459
+    track: 1
+  - songTime: 27.191895
+    track: 2
+  - songTime: 27.725098
+    track: 3
+  - songTime: 27.981201
+    track: 0
+  - songTime: 28.578613
+    track: 2
+  - songTime: 29.111816
+    track: 3
+  - songTime: 29.453125
+    track: 1
+  - songTime: 29.645264
+    track: 0
+  - songTime: 30.221191
+    track: 3
+  - songTime: 30.946533
+    track: 1
+  - songTime: 31.287842
+    track: 2
+  - songTime: 31.543945
+    track: 0
+  - songTime: 32.098633
+    track: 3
+  - songTime: 32.80249
+    track: 1
+  - songTime: 33.207764
+    track: 0
+  - songTime: 33.442627
+    track: 3
+  - songTime: 34.850586
+    track: 2
+  - songTime: 35.14917
+    track: 1
+  - songTime: 35.34131
+    track: 0
+  - songTime: 35.49048
+    track: 3
+  - songTime: 36.10913
+    track: 1
+  - songTime: 36.471924
+    track: 2
+  - songTime: 36.66382
+    track: 0
+  - songTime: 37.02661
+    track: 3
+  - songTime: 37.23999
+    track: 1
+  - songTime: 37.83716
+    track: 0
+  - songTime: 38.498535
+    track: 2
+  - songTime: 38.989258
+    track: 3
+  - songTime: 39.159912
+    track: 1
+  - songTime: 39.7146
+    track: 0
+  - songTime: 40.333252
+    track: 2
+  - songTime: 40.88794
+    track: 3
+  - songTime: 41.058594
+    track: 1
+  - songTime: 42.445312
+    track: 2
+  - songTime: 42.850586
+    track: 3
+  - songTime: 43.04248
+    track: 0
+  - songTime: 44.06665
+    track: 1
+  - songTime: 44.30127
+    track: 2
+  - songTime: 44.66382
+    track: 3
+  - songTime: 44.941162
+    track: 0
+  - songTime: 45.453125
+    track: 1
+  - songTime: 46.029297
+    track: 2
+  - songTime: 46.32788
+    track: 1
+  - songTime: 46.64795
+    track: 0
+  - songTime: 47.351807
+    track: 3
+  - songTime: 48.013184
+    track: 1
+  - songTime: 48.503906
+    track: 0
+  - songTime: 48.67456
+    track: 1
+  - songTime: 50.2959
+    track: 2
+  - songTime: 50.658447
+    track: 2
+  - songTime: 50.89331
+    track: 2
+  - songTime: 51.426514
+    track: 1
+  - songTime: 51.938477
+    track: 0
+  - songTime: 52.365234
+    track: 0
+  - songTime: 52.55713
+    track: 0
+  - songTime: 53.005127
+    track: 0
+  - songTime: 53.645264
+    track: 3
+  - songTime: 54.178467
+    track: 3
+  - songTime: 54.370605
+    track: 3
+  - songTime: 54.818604
+    track: 2
+  - songTime: 55.458496
+    track: 1
+  - songTime: 55.94922
+    track: 0
+  - songTime: 56.247803
+    track: 1
+  - songTime: 56.397217
+    track: 2
+  - songTime: 57.399902
+    track: 3
+  - songTime: 57.71997
+    track: 0
+  - songTime: 57.97583
+    track: 1
+  - songTime: 58.509277
+    track: 2
+  - songTime: 59.14917
+    track: 3
+  - songTime: 59.639893
+    track: 0
+  - songTime: 59.895996
+    track: 1
+  - songTime: 60.40796
+    track: 2
+  - songTime: 60.962646
+    track: 3
+  - songTime: 61.517334
+    track: 0
+  - songTime: 62.135986
+    track: 1
+  - songTime: 62.77588
+    track: 2
+  - songTime: 63.351807
+    track: 3
+  - songTime: 64.951904
+    track: 0
+  - songTime: 65.33594
+    track: 1
+  - songTime: 65.50659
+    track: 2
+  - songTime: 66.42383
+    track: 0
+  - songTime: 66.70117
+    track: 1
+  - songTime: 67.063965
+    track: 3
+  - songTime: 67.38379
+    track: 3
+  - songTime: 67.83179
+    track: 3
+  - songTime: 68.386475
+    track: 1
+  - songTime: 68.72778
+    track: 0
+  - songTime: 69.00513
+    track: 2
+  - songTime: 69.559814
+    track: 2
+  - songTime: 70.15723
+    track: 1
+  - songTime: 70.64795
+    track: 3
+  - songTime: 70.79712
+    track: 0
+  - songTime: 72.1626
+    track: 2
+  - songTime: 72.631836
+    track: 3
+  - songTime: 72.823975
+    track: 0
+  - songTime: 73.8479
+    track: 1
+  - songTime: 74.16797
+    track: 2
+  - songTime: 74.61597
+    track: 3
+  - songTime: 75.14917
+    track: 0
+  - songTime: 75.76782
+    track: 2
+  - songTime: 76.343994
+    track: 3
+  - songTime: 76.53589
+    track: 1
+  - songTime: 77.04785
+    track: 0
+  - songTime: 77.64526
+    track: 2
+  - songTime: 78.15723
+    track: 3
+  - songTime: 78.32788
+    track: 1
+  - songTime: 79.778564
+    track: 2
+  - songTime: 80.05591
+    track: 3
+  - songTime: 80.26929
+    track: 0
+  - songTime: 80.845215
+    track: 1
+  - songTime: 81.37866
+    track: 2
+  - songTime: 81.95459
+    track: 3
+  - songTime: 82.104004
+    track: 1
+  - songTime: 82.67993
+    track: 1
+  - songTime: 83.298584
+    track: 3
+  - songTime: 83.66113
+    track: 0
+  - songTime: 83.87451
+    track: 2
+  - songTime: 84.45044
+    track: 1
+  - songTime: 85.11182
+    track: 1
+  - songTime: 85.62378
+    track: 3
+  - songTime: 85.75195
+    track: 0
+  - songTime: 87.13843
+    track: 2
+  - songTime: 87.458496
+    track: 1
+  - songTime: 87.671875
+    track: 3
+  - songTime: 88.2478
+    track: 0
+  - songTime: 88.6958
+    track: 2
+  - songTime: 88.88794
+    track: 1
+  - songTime: 89.22925
+    track: 3
+  - songTime: 89.48511
+    track: 0
+  - songTime: 89.97583
+    track: 2
+  - songTime: 90.50928
+    track: 1
+  - songTime: 90.93579
+    track: 3
+  - songTime: 91.191895
+    track: 0
+  - songTime: 91.83179
+    track: 0
+  - songTime: 92.45044
+    track: 2
+  - songTime: 92.91992
+    track: 1
+  - songTime: 93.1333
+    track: 3
+  - songTime: 94.605225
+    track: 0
+  - songTime: 95.05322
+    track: 2
+  - songTime: 95.2666
+    track: 3
+  - songTime: 96.09863
+    track: 1
+  - songTime: 96.39722
+    track: 2
+  - songTime: 96.78125
+    track: 3
+  - songTime: 96.951904
+    track: 0
+  - songTime: 97.37866
+    track: 1
+  - songTime: 98.018555
+    track: 2
+  - songTime: 98.48779
+    track: 1
+  - songTime: 98.72266
+    track: 0
+  - songTime: 99.298584
+    track: 3
+  - songTime: 99.78931
+    track: 0
+  - songTime: 100.365234
+    track: 1
+  - songTime: 100.59985
+    track: 3
+  - songTime: 101.090576
+    track: 1
+  - songTime: 101.79443
+    track: 0
+  - songTime: 102.370605
+    track: 2
+  - songTime: 102.96777
+    track: 1
+  - songTime: 103.671875
+    track: 1
+  - songTime: 104.26929
+    track: 3
+  - songTime: 104.88794
+    track: 3
+  - songTime: 105.54932
+    track: 3
+  - songTime: 106.06128
+    track: 0
+  - songTime: 106.67993
+    track: 0
+  - songTime: 107.2771
+    track: 0
+  - songTime: 107.895996
+    track: 2
+  - songTime: 108.53589
+    track: 2
+  - songTime: 109.090576
+    track: 1
+  - songTime: 109.64526
+    track: 2
+  - songTime: 109.85864
+    track: 1
+  - songTime: 110.30664
+    track: 3
+  - songTime: 110.90381
+    track: 0
+  - songTime: 111.543945
+    track: 1
+  - songTime: 112.18384
+    track: 2
+  - songTime: 112.845215
+    track: 0
+  - songTime: 113.46387
+    track: 3
+  - songTime: 114.104004
+    track: 3
+  - songTime: 114.65845
+    track: 1
+  - songTime: 115.170654
+    track: 0
+  - songTime: 115.40527
+    track: 2
+  - songTime: 116.51465
+    track: 3
+  - songTime: 117.00513
+    track: 1
+  - songTime: 117.26123
+    track: 0
+  - songTime: 117.92261
+    track: 0
+  - songTime: 118.41333
+    track: 1
+  - songTime: 119.13843
+    track: 1
+  - songTime: 119.7146
+    track: 2
+  - songTime: 120.37598
+    track: 2
+  - songTime: 120.845215
+    track: 0
+  - songTime: 121.079834
+    track: 1
+  - songTime: 121.63452
+    track: 1
+  - songTime: 122.18921
+    track: 3
+  - songTime: 122.65845
+    track: 0
+  - songTime: 122.957275
+    track: 1
+  - songTime: 124.21582
+    track: 2
+  - songTime: 124.53589
+    track: 0
+  - songTime: 124.79199
+    track: 1
+  - songTime: 125.36792
+    track: 1
+  - songTime: 125.94385
+    track: 3
+  - songTime: 126.498535
+    track: 0
+  - songTime: 127.05322
+    track: 1
+  - songTime: 127.7146
+    track: 1
+  - songTime: 128.41846
+    track: 0
+  - songTime: 128.99463
+    track: 1
+  - songTime: 129.61328
+    track: 3
+  - songTime: 130.12524
+    track: 2
+  - songTime: 131.68262
+    track: 1
+  - songTime: 132.02393
+    track: 0
+  - songTime: 132.2373
+    track: 1
+  - songTime: 132.72778
+    track: 2
+  - songTime: 133.36792
+    track: 2
+  - songTime: 133.94385
+    track: 3
+  - songTime: 134.49854
+    track: 1
+  - songTime: 135.11719
+    track: 0
+  - songTime: 135.77856
+    track: 1
+  - songTime: 136.37598
+    track: 2
+  - songTime: 137.0586
+    track: 3
+  - songTime: 137.52783
+    track: 2
+  - songTime: 137.78394
+    track: 1
+  - songTime: 138.4878
+    track: 1
+  - songTime: 139.17065
+    track: 1
+  noteSpeed: 0
+  title: 
+  author: 

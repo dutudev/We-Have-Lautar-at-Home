@@ -1,0 +1,367 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
+  m_Name: gypsyjazz
+  m_EditorClassIdentifier: 
+  song: {fileID: 8300000, guid: f5658371f64f76a4ca794698b763af24, type: 3}
+  notes:
+  - songTime: 5.8372803
+    track: 2
+  - songTime: 6.050659
+    track: 3
+  - songTime: 7.287964
+    track: 0
+  - songTime: 7.6292725
+    track: 1
+  - songTime: 7.821289
+    track: 2
+  - songTime: 8.034668
+    track: 3
+  - songTime: 9.0373535
+    track: 3
+  - songTime: 9.293335
+    track: 2
+  - songTime: 9.592041
+    track: 1
+  - songTime: 9.890625
+    track: 1
+  - songTime: 10.722656
+    track: 0
+  - songTime: 11.447998
+    track: 3
+  - songTime: 12.237305
+    track: 2
+  - songTime: 12.9626465
+    track: 1
+  - songTime: 13.709351
+    track: 0
+  - songTime: 14.41333
+    track: 0
+  - songTime: 14.583984
+    track: 1
+  - songTime: 14.903931
+    track: 2
+  - songTime: 15.223999
+    track: 3
+  - songTime: 15.58667
+    track: 3
+  - songTime: 15.991943
+    track: 1
+  - songTime: 16.674683
+    track: 3
+  - songTime: 17.015991
+    track: 3
+  - songTime: 17.335938
+    track: 2
+  - songTime: 17.741333
+    track: 0
+  - songTime: 18.06128
+    track: 3
+  - songTime: 18.829346
+    track: 2
+  - songTime: 19.661255
+    track: 1
+  - songTime: 20.258667
+    track: 0
+  - songTime: 20.557373
+    track: 1
+  - songTime: 20.941284
+    track: 3
+  - songTime: 21.602661
+    track: 2
+  - songTime: 21.901367
+    track: 2
+  - songTime: 22.328003
+    track: 1
+  - songTime: 22.605347
+    track: 0
+  - songTime: 23.629272
+    track: 0
+  - songTime: 24.610596
+    track: 1
+  - songTime: 25.46399
+    track: 2
+  - songTime: 26.29602
+    track: 3
+  - songTime: 26.978638
+    track: 3
+  - songTime: 27.298706
+    track: 2
+  - songTime: 27.554688
+    track: 1
+  - songTime: 27.938599
+    track: 0
+  - songTime: 28.407959
+    track: 2
+  - songTime: 28.749268
+    track: 3
+  - songTime: 29.1333
+    track: 3
+  - songTime: 29.432007
+    track: 2
+  - songTime: 29.794678
+    track: 1
+  - songTime: 30.114624
+    track: 0
+  - songTime: 30.477295
+    track: 2
+  - songTime: 30.690674
+    track: 1
+  - songTime: 31.394653
+    track: 0
+  - songTime: 31.565308
+    track: 0
+  - songTime: 32.461304
+    track: 1
+  - songTime: 32.76001
+    track: 2
+  - songTime: 33.783936
+    track: 3
+  - songTime: 33.975952
+    track: 3
+  - songTime: 34.381348
+    track: 2
+  - songTime: 34.722656
+    track: 0
+  - songTime: 35.59729
+    track: 2
+  - songTime: 35.767944
+    track: 1
+  - songTime: 36.42932
+    track: 3
+  - songTime: 37.34668
+    track: 0
+  - songTime: 38.007935
+    track: 2
+  - songTime: 38.15735
+    track: 1
+  - songTime: 38.349365
+    track: 3
+  - songTime: 38.455933
+    track: 0
+  - songTime: 38.605347
+    track: 2
+  - songTime: 38.776
+    track: 1
+  - songTime: 38.968018
+    track: 2
+  - songTime: 41.079956
+    track: 3
+  - songTime: 41.421265
+    track: 3
+  - songTime: 41.656006
+    track: 3
+  - songTime: 41.911987
+    track: 0
+  - songTime: 42.509277
+    track: 2
+  - songTime: 43.277344
+    track: 1
+  - songTime: 43.981323
+    track: 3
+  - songTime: 44.30127
+    track: 3
+  - songTime: 44.749268
+    track: 0
+  - songTime: 45.069336
+    track: 2
+  - songTime: 45.47461
+    track: 1
+  - songTime: 45.858643
+    track: 3
+  - songTime: 46.221313
+    track: 2
+  - songTime: 46.583984
+    track: 2
+  - songTime: 46.90393
+    track: 0
+  - songTime: 47.35193
+    track: 2
+  - songTime: 47.47998
+    track: 1
+  - songTime: 47.629272
+    track: 3
+  - songTime: 47.84265
+    track: 2
+  - songTime: 48.39734
+    track: 2
+  - songTime: 48.823975
+    track: 1
+  - songTime: 49.12268
+    track: 0
+  - songTime: 49.335938
+    track: 1
+  - songTime: 49.527954
+    track: 3
+  - songTime: 49.69861
+    track: 2
+  - songTime: 50.594604
+    track: 2
+  - songTime: 51.447998
+    track: 1
+  - songTime: 51.895996
+    track: 0
+  - songTime: 52.002686
+    track: 3
+  - songTime: 52.130615
+    track: 2
+  - songTime: 52.258667
+    track: 1
+  - songTime: 52.51465
+    track: 2
+  - songTime: 52.66394
+    track: 0
+  - songTime: 52.89868
+    track: 1
+  - songTime: 53.218628
+    track: 2
+  - songTime: 53.5813
+    track: 2
+  - songTime: 54.114624
+    track: 3
+  - songTime: 54.434692
+    track: 2
+  - songTime: 54.797363
+    track: 3
+  - songTime: 55.160034
+    track: 2
+  - songTime: 55.37329
+    track: 1
+  - songTime: 55.778687
+    track: 0
+  - songTime: 56.18396
+    track: 0
+  - songTime: 56.52527
+    track: 1
+  - songTime: 56.930664
+    track: 2
+  - songTime: 57.271973
+    track: 3
+  - songTime: 57.59204
+    track: 2
+  - songTime: 57.95459
+    track: 3
+  - songTime: 58.381348
+    track: 2
+  - songTime: 58.701294
+    track: 1
+  - songTime: 59.23462
+    track: 0
+  - songTime: 59.575928
+    track: 0
+  - songTime: 59.874634
+    track: 1
+  - songTime: 60.06665
+    track: 2
+  - songTime: 60.365356
+    track: 3
+  - songTime: 60.89868
+    track: 3
+  - songTime: 61.11194
+    track: 2
+  - songTime: 61.389282
+    track: 1
+  - songTime: 61.773315
+    track: 0
+  - songTime: 62.135986
+    track: 0
+  - songTime: 62.434692
+    track: 1
+  - songTime: 62.64795
+    track: 2
+  - songTime: 63.13867
+    track: 3
+  - songTime: 63.37329
+    track: 2
+  - songTime: 63.522705
+    track: 1
+  - songTime: 63.735962
+    track: 0
+  - songTime: 64.013306
+    track: 2
+  - songTime: 64.50403
+    track: 0
+  - songTime: 64.69592
+    track: 0
+  - songTime: 64.9093
+    track: 3
+  - songTime: 65.20801
+    track: 2
+  - songTime: 65.48535
+    track: 0
+  - songTime: 65.762695
+    track: 3
+  - songTime: 66.16797
+    track: 2
+  - songTime: 66.29602
+    track: 0
+  - songTime: 66.61597
+    track: 3
+  - songTime: 66.97864
+    track: 2
+  - songTime: 67.12793
+    track: 0
+  - songTime: 67.448
+    track: 3
+  - songTime: 67.72534
+    track: 2
+  - songTime: 67.895996
+    track: 0
+  - songTime: 68.21594
+    track: 3
+  - songTime: 68.55737
+    track: 0
+  - songTime: 68.77063
+    track: 2
+  - songTime: 69.11194
+    track: 3
+  - songTime: 69.303955
+    track: 0
+  - songTime: 69.5813
+    track: 2
+  - songTime: 69.90137
+    track: 3
+  - songTime: 70.0293
+    track: 0
+  - songTime: 70.349365
+    track: 2
+  - songTime: 70.690674
+    track: 0
+  - songTime: 70.839966
+    track: 1
+  - songTime: 71.07471
+    track: 1
+  - songTime: 71.416016
+    track: 0
+  - songTime: 71.73596
+    track: 1
+  - songTime: 72.013306
+    track: 2
+  - songTime: 72.31201
+    track: 3
+  - songTime: 72.589355
+    track: 2
+  - songTime: 73.01599
+    track: 0
+  - songTime: 73.37866
+    track: 0
+  - songTime: 73.69861
+    track: 3
+  - songTime: 74.29602
+    track: 2
+  - songTime: 77.0907
+    track: 1
+  - songTime: 80.43994
+    track: 3
+  noteSpeed: 2
+  title: GypsyJazz
+  author: Public Domain

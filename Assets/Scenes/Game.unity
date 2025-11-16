@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94265b42974a8044c9e2e7dffa198b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSong: {fileID: 11400000, guid: 966e408151e5c804d979293e67657534, type: 2}
+  currentSong: {fileID: 11400000, guid: 8719a416fbe9c244a8bd7fd026038ac3, type: 2}
   score: 0
   comPort: 
 --- !u!1 &854186592
