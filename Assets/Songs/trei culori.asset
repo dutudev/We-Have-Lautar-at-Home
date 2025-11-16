@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ee26e14f029394392725287a3b8dd2, type: 3}
   m_Name: trei culori
   m_EditorClassIdentifier: 
-  song: {fileID: 0}
+  song: {fileID: 8300000, guid: 96aa00309bc2a4d4f92914182544e989, type: 3}
   notes:
   - songTime: 5.901123
     track: 0
