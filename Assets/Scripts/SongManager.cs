@@ -11,15 +11,15 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Song currentSong;
     [Header("Gameobject Variables")]
     [SerializeField] private AudioSource songAudioSource;
-    [SerializeField] private GameObject notePrefab, noteParent;
+    [SerializeField] private GameObject notePrefab, noteParent, fireGameObject;
     [SerializeField] private GameObject[] tracksGameObjects, noteFinalGameObjects;
     [Header("Game Variables")] 
     [SerializeField] private List<NoteObj> notesLive = new List<NoteObj>(); 
     [SerializeField] private float currentSongTime;
     [SerializeField] private float positionNoteSpawnY;
-    [SerializeField] private Material movingMotif, movingMotif1;
+    [SerializeField] private Material movingMotif, movingMotif1, fire;
 
-    private int _lastNote = 0;
+    private int _lastNote = 0, _combo = 0;
     private bool _didNotesFinish = false, _endmenuOpen = false, _returnMenu = false;
     private float _songStartDspTime = -1, _timeLeftEnd;
     private List<NoteObj> _notesToRemove = new List<NoteObj>();
@@ -168,6 +168,7 @@ public class SongManager : MonoBehaviour
                 _notesToRemove.Add(note);
                 GameManager.instance.UpdateScore(0);
                 //ADD MISS !!
+                UpdateCombo(-1);
             }
         }
         UpdateRemoveNotes();
@@ -201,9 +202,11 @@ public class SongManager : MonoBehaviour
             {
                 score = 20 + Mathf.FloorToInt(30 * ((trackNotes[0].progress - 0.85f) / 0.15f));
                 // ADD SCORE
-                /*
+                
                 if (score >= 45)
                 {
+                    UpdateCombo(2);
+                    /*
                     LeanTween.cancel(gameObject);
                     LeanTween.value(gameObject, 0, 1, 1f).setEaseOutExpo().setOnUpdate((value) =>
                     {
@@ -213,11 +216,19 @@ public class SongManager : MonoBehaviour
                     {
                         movingMotif.SetFloat("_speed", 0.3f);
                         movingMotif1.SetFloat("_speed", -0.2f);
-                    });
-                }*/
+                    });*/
+                }else if (score >= 35)
+                {
+                    UpdateCombo(1);
+                }
+                else
+                {
+                    UpdateCombo(-1);
+                }
                 _notesToRemove.Add(trackNotes[0]);
             }else if (trackNotes[0].progress > 1)
             {
+                UpdateCombo(-1);
                 score = 10;
                 //ADD score
                 _notesToRemove.Add(trackNotes[0]);
@@ -229,6 +240,29 @@ public class SongManager : MonoBehaviour
             }
             
         }
+    }
+
+    public void UpdateCombo(int value)
+    {
+        float currentLerp = (_combo - 5f) / 10f;
+        float time = 1f;
+        if (value == -1)
+        {
+            _combo = 0;
+            currentLerp = Mathf.Clamp((_combo - 5f) / 10f, 0f, 1f);
+            time = currentLerp*15f;
+        }
+        else
+        {
+            _combo += value;
+        }
+        
+        LeanTween.cancel(fireGameObject);
+        LeanTween.value(fireGameObject, currentLerp, (_combo - 5f) / 10f, time).setEaseOutExpo().setOnUpdate((float valueLerp) =>
+        {
+            fireGameObject.transform.localScale = new Vector3(Mathf.Lerp(1, 3.5f, valueLerp), Mathf.Lerp(1, 3.5f, valueLerp), Mathf.Lerp(1, 3.5f, valueLerp));
+            fire.SetFloat("_size", Mathf.Lerp(0, 3f, valueLerp));
+        });
     }
 
     public void UpdateRemoveNotes()
